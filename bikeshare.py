@@ -21,8 +21,8 @@ def get_filters():
       city=input('Please enter the city whose data you want to explore. Choose: Chicago, New York City, or Washington')
       if city.lower() not in ['chicago','new york city','washington']:
              print("Please choose one of the three cities")
-     
-      else: 
+    #if the user enter diffrent city
+      else:
              city=city.lower()
              break
     print('You chose {}'.format(city.title()))
@@ -75,10 +75,10 @@ def load_data(city, month, day):
     if month!='all':
         month=months.index(month)
         df=df[df['month']==month]
-        
+
     if day !=7:
         df=df[df['day_of_week']==day]
-        
+
 
     return df
 
